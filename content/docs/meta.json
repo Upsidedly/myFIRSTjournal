@@ -1,0 +1,10 @@
+{
+    "title": "Home",
+    "root": true,
+    "pages": [
+        "---Introduction---",
+        "index",
+        "---Getting Started---",
+        "...getting-started"
+    ]
+}

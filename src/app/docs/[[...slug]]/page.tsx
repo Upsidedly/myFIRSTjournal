@@ -1,16 +1,17 @@
-import { source } from '@/lib/source';
+import { source } from "@/lib/source";
 import {
   DocsPage,
   DocsBody,
   DocsDescription,
   DocsTitle,
-} from 'fumadocs-ui/page';
-import { notFound } from 'next/navigation';
-import { createRelativeLink } from 'fumadocs-ui/mdx';
-import { getMDXComponents } from '@/mdx-components';
-import { Wordmark } from '@/components/wordmark';
-import { cn } from '@/lib/utils';
-import ToBeAdded from '@/components/tba';
+} from "fumadocs-ui/page";
+import { notFound } from "next/navigation";
+import { createRelativeLink } from "fumadocs-ui/mdx";
+import { getMDXComponents } from "@/mdx-components";
+import { Wordmark } from "@/components/wordmark";
+import { cn } from "@/lib/utils";
+import ToBeAdded from "@/components/tba";
+import { Card, Cards } from "fumadocs-ui/components/card";
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
@@ -19,13 +20,19 @@ export default async function Page(props: {
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
-  console.log(params.slug)
-
   const MDXContent = page.data.body;
 
   return (
     <DocsPage toc={page.data.toc} full={page.data.full}>
-      <DocsTitle>{!params.slug ? <>What is <Wordmark className='inline mr-0.5' />?</> : page.data.title}</DocsTitle>
+      <DocsTitle>
+        {!params.slug ? (
+          <>
+            What is <Wordmark className="inline mr-0.5" />?
+          </>
+        ) : (
+          page.data.title
+        )}
+      </DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
         <MDXContent
@@ -33,9 +40,27 @@ export default async function Page(props: {
             // this allows you to link to other pages with relative file paths
             a: createRelativeLink(source, page),
             Wordmark: ({ className }: { className?: string }) => (
-              <Wordmark className={cn('inline', className)} />
+              <Wordmark className={cn("inline", className)} />
             ),
-            TBA: ToBeAdded
+            TBA: ToBeAdded,
+            LinkedCards: ({
+              className,
+              data,
+            }: {
+              className?: string;
+              data: { title?: string; description: string; link: string }[];
+            }) => (
+              <Cards className={className}>
+                {data.map((card) => (
+                  <Card
+                    key={card.title}
+                    title={card.title}
+                    description={card.description}
+                    href={card.link}
+                  />
+                ))}
+              </Cards>
+            ),
           })}
         />
       </DocsBody>
