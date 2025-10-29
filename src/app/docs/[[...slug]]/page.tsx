@@ -12,6 +12,9 @@ import { Wordmark } from "@/components/wordmark";
 import { cn } from "@/lib/utils";
 import ToBeAdded from "@/components/tba";
 import { Card, Cards } from "fumadocs-ui/components/card";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { SeeMain } from "@/components/see-main";
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
@@ -48,7 +51,7 @@ export default async function Page(props: {
               data,
             }: {
               className?: string;
-              data: { title?: string; description: string; link: string }[];
+              data: { title?: string; description: string; href: string }[];
             }) => (
               <Cards className={className}>
                 {data.map((card) => (
@@ -56,11 +59,12 @@ export default async function Page(props: {
                     key={card.title}
                     title={card.title}
                     description={card.description}
-                    href={card.link}
+                    href={card.href}
                   />
                 ))}
               </Cards>
             ),
+            SeeMain: SeeMain
           })}
         />
       </DocsBody>
