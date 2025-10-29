@@ -1,10 +1,33 @@
-import { cn } from "@/lib/utils"
-import Link from "next/link"
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 
-export function SeeMain({ className, href }: { className?: string, href: string }) {
-    return <Link
-            href={href}
-            className={cn(
-            "group flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-all mt-1 no-underline",
-            className
-)}>See main article</Link> }
+export function SeeMain({
+  className,
+  href,
+  name,
+}: {
+  className?: string;
+  href: string;
+  name?: string;
+}) {
+  const baseClasses = "group flex items-center gap-1 pl-5 text-sm text-muted-foreground -mt-2 no-underline";
+  const linkClasses = "text-sm no-underline hover:text-foreground/100 transition-all";
+
+  return (
+    <div className={cn(baseClasses, className)}>
+      ❖<span className="ml-1" />
+      {name ? (
+        <>
+          See main article:&nbsp;
+          <Link href={href} className={cn("pl-0 mt-0", linkClasses)}>
+            {name}
+          </Link>
+        </>
+      ) : (
+        <Link href={href} className={linkClasses}>
+          See main article
+        </Link>
+      )}
+    </div>
+  );
+}

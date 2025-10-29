@@ -14,7 +14,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <body
         className="flex flex-col min-h-screen"
         style={{
-          fontFamily: `"SF Pro Display", "SF Pro Text", Helvetica, ${inter.style.fontFamily}`,
+          fontFamily: `"SF Pro Text", "Helvetica Neue", ${inter.style.fontFamily}`,
         }}
       >
         <RootProvider>{children}</RootProvider>

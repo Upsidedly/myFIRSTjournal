@@ -1,0 +1,44 @@
+---
+title: Dictionary Reference Example
+description: Testing the double bracket dictionary feature
+---
+
+# Dictionary Reference Example
+
+This page demonstrates the dictionary reference feature using double brackets.
+
+## How It Works
+
+When you write a word in double brackets like [[robot]], it will become an interactive term that shows a definition when you hover over it.
+
+You can also use custom display text with the pipe syntax: [[First Tech Challenge|ftc]] displays "First Tech Challenge" but uses the "ftc" dictionary entry.
+
+## Examples
+
+Here are some examples:
+
+- A [[servo]] is used for precise angular control
+- [[FTC]] is a robotics competition for middle and high school students
+- The [[First Tech Challenge|ftc]] is great for learning robotics
+- During [[autonomous]], the robot operates without driver input
+- [[TeleOp]] is when drivers control the robot
+- A [[motor]] converts electrical energy to motion
+- [[PID]] controllers help with precise movement
+- [[Odometry]] helps track robot position
+- [[Sensor]] devices detect environmental inputs
+
+## Custom Display Text
+
+You can display different text while still using the dictionary definition:
+
+- The [[proportional-integral-derivative controller|pid]] is essential for smooth motion
+- We use [[motors|motor]] and [[servos|servo]] in our robot
+- The [[driver-controlled period|teleop]] comes after autonomous
+
+## Undefined Terms
+
+If you reference a term that's not in the dictionary, like [[undefined-term]], it will just display in brackets without the interactive tooltip.
+
+## Add More Terms
+
+You can add more dictionary entries in `src/lib/dictionary.ts`.
