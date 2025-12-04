@@ -33,10 +33,10 @@ export function Spinner({ className, size = 40 }: SpinnerProps) {
 
   return (
     <div
-      className={cn('spinner', className)}
+      className={cn('relative block', className)}
       style={{ width: size, height: size }}
     >
-      <div className="container">
+      <div className="relative w-full h-full left-1/2 top-1/2">
         {[...Array(barCount)].map((_, i) => {
           const angle = (360 / barCount) * i;
           // evenly phase offsets so no dead frames
@@ -44,53 +44,20 @@ export function Spinner({ className, size = 40 }: SpinnerProps) {
           return (
             <span
               key={i}
-              className="bar"
+              className="absolute rounded-full bg-current animate-[spinner-fade_linear_infinite]"
               style={{
                 animationDelay: `${delay}s`,
                 animationDuration: `${duration}s`,
                 transform: `rotate(${angle}deg) translate(${translate * 100}%)`,
                 width: `${barLength * 100}%`,
                 height: `${barThickness * 100}%`,
+                top: '-3.9%',
+                left: '-10%',
               }}
             />
           );
         })}
       </div>
-
-      <style jsx>{`
-        .spinner {
-          display: block;
-          position: relative;
-        }
-
-        .container {
-          width: 100%;
-          height: 100%;
-          position: relative;
-          left: 50%;
-          top: 50%;
-        }
-
-        .bar {
-          background-color: currentColor;
-          position: absolute;
-          top: -3.9%;
-          left: -10%;
-          border-radius: 9999px;
-          animation-name: spinner-fade;
-          animation-timing-function: linear;
-          animation-iteration-count: infinite;
-        }
-
-        @keyframes spinner-fade {
-          0% {
-            opacity: 1;
-          }
-          100% {
-            opacity: 0.15;
-          }
-        }
-      `}</style>
     </div>
   );
 }

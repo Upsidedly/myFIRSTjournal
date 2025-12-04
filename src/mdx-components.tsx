@@ -3,6 +3,7 @@ import type { MDXComponents } from 'mdx/types';
 import getPageCardComponents from '@suin/fumadocs-page-card';
 import { source } from './lib/source';
 import { Bracket } from './components/bracket';
+import { Wordmark } from './components/wordmark';
 
 // use this function to get MDX components, you will need it for rendering MDX
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
@@ -10,6 +11,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     ...defaultMdxComponents,
     ...getPageCardComponents({ source }),
     Bracket,
+    Wordmark,
     ...components,
   };
 }

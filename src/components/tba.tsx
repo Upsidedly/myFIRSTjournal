@@ -17,8 +17,8 @@ export default function ConstructionCard() {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center">
-          <h3 className="text-sm !font-normal text-amber-800 dark:text-amber-300">🚧 Under Development</h3>
-          <p className="text-amber-700 dark:text-amber-400 text-sm font-semibold">This section is currently being built — check in another time!</p>
+          <h3 className="!font-normal text-amber-800 dark:text-amber-300">🚧 Under Development</h3>
+          <p className="text-amber-700 dark:text-amber-400 font-semibold">This section is currently being built — check in another time!</p>
       </div>
     </div>
   )

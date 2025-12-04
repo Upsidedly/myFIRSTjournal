@@ -15,9 +15,9 @@ export const dictionary: Record<string, DictionaryEntry> = {
   },
   "ftc": {
     term: "FTC",
-    definition: "FIRST Tech Challenge - A robotics competition for students in grades 7-12.",
+    definition: "FIRST Tech Challenge is a robotics competition for students in grades 7-12 organised by FIRST. The world championship is held in Houston, Texas, every year.",
     category: "Competition",
-    mainPage: "/docs/getting-started"
+    // mainPage: "/docs/getting-started"
   },
   "autonomous": {
     term: "Autonomous",

@@ -12,9 +12,8 @@ import { Wordmark } from "@/components/wordmark";
 import { cn } from "@/lib/utils";
 import ToBeAdded from "@/components/tba";
 import { Card, Cards } from "fumadocs-ui/components/card";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { SeeMain } from "@/components/see-main";
+import { Icon } from "@/components/icon";
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
@@ -42,8 +41,8 @@ export default async function Page(props: {
           components={getMDXComponents({
             // this allows you to link to other pages with relative file paths
             a: createRelativeLink(source, page),
-            Wordmark: ({ className }: { className?: string }) => (
-              <Wordmark className={cn("inline", className)} />
+            Wordmark: ({ className, textOnly }: { className?: string, textOnly?: boolean }) => (
+              <Wordmark className={cn("inline", className)} textOnly={textOnly} />
             ),
             TBA: ToBeAdded,
             LinkedCards: ({
@@ -64,7 +63,8 @@ export default async function Page(props: {
                 ))}
               </Cards>
             ),
-            SeeMain: SeeMain
+            SeeMain: SeeMain,
+            Icon: Icon,
           })}
         />
       </DocsBody>

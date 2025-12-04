@@ -10,7 +10,7 @@ export function SeeMain({
   href: string;
   name?: string;
 }) {
-  const baseClasses = "group flex items-center gap-1 pl-5 text-sm text-muted-foreground -mt-2 no-underline";
+  const baseClasses = "group flex items-center gap-1 pl-5 text-sm text-muted-foreground -mt-1 no-underline";
   const linkClasses = "text-sm no-underline hover:text-foreground/100 transition-all";
 
   return (

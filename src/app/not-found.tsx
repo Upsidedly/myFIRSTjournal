@@ -13,7 +13,7 @@ export default function HomePage() {
           Only <span className="font-serif italic text-muted-foreground">cobwebs</span> here — This page was not found.
         </h2>
         <Link
-          className="rounded-lg font-normal text-xl border border-muted-foreground/30 w-max px-8 py-1 hover:cursor-pointer transition-colors hover:bg-muted/60"
+          className="rounded-lg font-[400] text-xl border border-muted-foreground/30 w-max px-8 py-1 hover:cursor-pointer transition-colors hover:bg-muted/60"
           href="/"
         >
           Go back home

@@ -12,7 +12,7 @@ export const baseOptions: BaseLayoutProps = {
   nav: {
     title: (
       <>
-        <Wordmark />
+        <Wordmark logoOnly size="large" />
       </>
     ),
   },

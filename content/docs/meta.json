@@ -4,7 +4,12 @@
     "pages": [
         "---Introduction---",
         "index",
+        "season-breakdown",
         "---Getting Started---",
-        "...getting-started"
+        "...getting-started",
+        "---Libraries---",
+        "...libraries",
+        "---Sensors and Vision---",
+        "...sensors-and-vision"
     ]
 }

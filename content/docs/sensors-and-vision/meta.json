@@ -1,6 +1,7 @@
 {
     "pages": [
-        "---Sensors and Vision---",
-        "..."
-    ]
+        "webcam",
+        "color-sensor-v3"
+    ],
+    "icon": "Eye"
 }

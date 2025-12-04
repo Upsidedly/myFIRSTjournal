@@ -2,6 +2,9 @@
     "pages": [
         "index",
         "blocks",
+        "onbotjava",
+        "android-studio",
         "dictionary-demo"
-    ]
+    ],
+    "icon": "Rocket"
 }
